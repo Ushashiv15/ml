@@ -1,0 +1,20 @@
+import pandas as pd
+r=pd.read_csv('risk.csv')
+r
+tr=len(r)
+tr
+golf=len(r[r['recreation']=='golf'])
+golf
+mr=len(r[r['risk']=='med'])
+mr
+mrs=len(r[(r['risk']=='med')&(r['status']=='single')])
+mrs
+pg=golf/tr
+pg
+pm=mr/tr
+pm
+pmrs=mrs/tr
+pmrs
+cp=pmrs/pm
+cp
+print('probability of staus being single above given risk is medrisk: ',round(cp,3))
